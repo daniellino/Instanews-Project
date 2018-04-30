@@ -9,7 +9,8 @@
                 $(".stories").empty();
 
 //Getting dat API right
-        var genreSelect = $(".genre").children(":selected").val();
+        var genreSelect = $(this).val();
+        console.log(genreSelect);
         var url = "https://api.nytimes.com/svc/topstories/v2/" + genreSelect + ".json"; 
         url+= "?" + $.param({
                 "api-key": "63ff38af2226431eba347fc1bd5073e1"
@@ -23,17 +24,20 @@
                 url: url,
                 method: "GET",
         }).done(function(data) {
-                var baseData = data.results;
-                var html = "<ul>";
-
-                $.each( baseData, function( index, value ) {
-                        console.log(value);
+                var baseData = data.results.filter(function(value){
+                        return value.multimedia.length > 0;
+                }).slice(0, 12);
+                // console.log(baseData);
+                
+                $.each(baseData, function(key, value) {
+                        // console.log(value);
                         var storyUrl = value.url;
                         var storyDesc = value.abstract;
                         var storyImag = value.multimedia[4].url;
 
-                        html += "<li class='list-item' style='background-image: url(" + storyImag;
-                        html += ")'>"
+                        var html = "";
+                        html += "<li class='list-item' style='background-image: url(";
+                        html += storyImag + ")'>"
                         html += "<a href='" + storyUrl;
                         html += "' target='_blank'>"
                         html += "<div class='story-desc'>" + storyDesc;
@@ -41,8 +45,7 @@
 
                         $(".stories").append(html);
                 });
-                html += "</ul>"
-                // console.log(result);
+
         }).fail(function(err) {
                 throw err;
         });
