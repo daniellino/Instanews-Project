@@ -28,15 +28,16 @@
 
                 $.each( baseData, function( index, value ) {
                         console.log(value);
-                        var articleUrl = value.url;
-                        var articleDesc = value.abstract;
-                        var articleImag = value.multimedia[4].url;
+                        var storyUrl = value.url;
+                        var storyDesc = value.abstract;
+                        var storyImag = value.multimedia[4].url;
 
-                        html += "<li class='list-item' style='background-image: url(" + articleImag;
+                        html += "<li class='list-item' style='background-image: url(" + storyImag;
                         html += ")'>"
-                        html += "<a href='" + articleUrl;
-                        html += "' target='_blank'>" + articleDesc;
-                        html += "</a></li>";
+                        html += "<a href='" + storyUrl;
+                        html += "' target='_blank'>"
+                        html += "<div class='story-desc'>" + storyDesc;
+                        html += "</div></a></li>";
 
                         $(".stories").append(html);
                 });
