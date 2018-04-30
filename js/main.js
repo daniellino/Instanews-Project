@@ -23,21 +23,24 @@
                 url: url,
                 method: "GET",
         }).done(function(data) {
-                var a = data.results;
-                $.each( a, function( index, value ) {
-                        console.log(value);
+                var baseData = data.results;
+                var html = "<ul>";
 
-                        var html = '';
-                        html += "<li class='list-item'>";
-                        html += "<a href='";
-                        html += value.url;
-                        html += "'>";
-                        html += value.abstract;
+                $.each( baseData, function( index, value ) {
+                        console.log(value);
+                        var articleUrl = value.url;
+                        var articleDesc = value.abstract;
+                        var articleImag = value.multimedia[4].url;
+
+                        html += "<li class='list-item' style='background-image: url(" + articleImag;
+                        html += ")'>"
+                        html += "<a href='" + articleUrl;
+                        html += "' target='_blank'>" + articleDesc;
                         html += "</a></li>";
 
                         $(".stories").append(html);
                 });
-
+                html += "</ul>"
                 // console.log(result);
         }).fail(function(err) {
                 throw err;

@@ -55,7 +55,7 @@ body {
 .list-item {
   color: white;
   list-style: none;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-size: cover;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
