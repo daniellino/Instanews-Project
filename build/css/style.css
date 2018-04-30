@@ -77,7 +77,29 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #9b4949; }
+  font-weight: 300;
+  background-color: black;
+  color: white; }
+
+header {
+  font-size: 0.75rem;
+  margin: 200px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  header p {
+    margin: 20px; }
+  header select {
+    font-size: 1rem; }
 
 .stories-grid {
   display: -webkit-box;
@@ -109,3 +131,8 @@ body {
     .list-item a div {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 20px 5px; }
+
+footer {
+  font-size: 0.875rem;
+  color: #c2c2c2;
+  text-align: center; }

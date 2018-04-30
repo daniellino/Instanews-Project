@@ -8,9 +8,12 @@
         $("#genre-select").on("change", function(){
                 $(".stories").empty();
 
+// Append loading gif
+        $(".stories-grid").append("<img class='loader' src='assets/images/ajax-loader.gif'>");
+
 //Getting dat API right
         var genreSelect = $(this).val();
-        console.log(genreSelect);
+        // console.log(genreSelect);
         var url = "https://api.nytimes.com/svc/topstories/v2/" + genreSelect + ".json"; 
         url+= "?" + $.param({
                 "api-key": "63ff38af2226431eba347fc1bd5073e1"
@@ -46,7 +49,10 @@
                         $(".stories").append(html);
                 });
 
-        }).fail(function(err) {
+        }).always(function(){
+                $(".loader").detach();
+        })
+                .fail(function(err) {
                 throw err;
         });
         });
