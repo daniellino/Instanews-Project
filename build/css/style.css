@@ -1,2 +1,18 @@
 body {
-  background-color: cornflowerblue; }
+  background-color: #9b4949; }
+
+section {
+  display: grid; }
+
+article {
+  border: 1px solid black;
+  background: url(https://picsum.photos/400/400/?random); }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+.list-item {
+  color: white;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.25); }

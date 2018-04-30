@@ -2,5 +2,22 @@
 @import "partials/mixins";
 
 body {
-    background-color: cornflowerblue;
+    background-color: rgb(155, 73, 73);
+}
+section {
+    display: grid;
+    // grid-template: repeat(12, 400px) / 1fr;
+}
+article {
+    border: 1px solid black;
+    background: url(https://picsum.photos/400/400/?random);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.list-item {
+    color: white;
+    list-style: none;
+    background-color: rgba(0, 0, 0, .25);
 }
