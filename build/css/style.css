@@ -125,9 +125,23 @@ header {
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-transform: translate(-10%);
+              transform: translate(-10%);
+      padding: 30px; }
+      header .logo {
+        max-width: 175px; } }
+  @media (min-width: 1000px) {
+    header {
       -webkit-box-pack: start;
           -ms-flex-pack: start;
-              justify-content: flex-start; } }
+              justify-content: flex-start;
+      -webkit-transform: translate(5%);
+              transform: translate(5%); }
+      header .logo {
+        max-width: 220px; } }
 
 .stories-grid {
   display: -webkit-box;
@@ -173,3 +187,6 @@ footer {
   text-align: center;
   position: relative;
   padding: 30px; }
+  @media (min-width: 1000px) {
+    footer {
+      text-align: left; } }

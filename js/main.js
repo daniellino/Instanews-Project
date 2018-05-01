@@ -10,11 +10,12 @@
 
 //Header Adjustments
         $(".header").css({
-                margin: "auto"
+                margin: "auto",
         }),
         $(".logo").css({
                 height: "40%",
-                width: "40%"
+                width: "40%",
+                "max-width": "175px"
         })
 
 // Append loading gif
