@@ -83,7 +83,7 @@ body {
 
 header {
   font-size: 0.75rem;
-  margin: 200px auto;
+  margin: 100px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,15 +96,50 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  header .logo {
+    padding-top: 30px;
+    max-width: 220px; }
   header p {
-    margin: 20px; }
+    margin: 20px;
+    text-align: center; }
   header select {
-    font-size: 1rem; }
+    font-size: 1rem;
+    margin-bottom: 40px; }
+  header .choose-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  @media (min-width: 600px) {
+    header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
 
 .stories-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  .stories-grid .loader {
+    height: 50px;
+    width: 50px;
+    display: absolute;
+    margin-left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%); }
 
 .list-item {
   list-style: none;
@@ -129,10 +164,12 @@ header {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse; }
     .list-item a div {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.65);
       padding: 20px 5px; }
 
 footer {
   font-size: 0.875rem;
   color: #c2c2c2;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  padding: 30px; }

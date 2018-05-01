@@ -8,6 +8,15 @@
         $("#genre-select").on("change", function(){
                 $(".stories").empty();
 
+//Header Adjustments
+        $(".header").css({
+                margin: "auto"
+        }),
+        $(".logo").css({
+                height: "40%",
+                width: "40%"
+        })
+
 // Append loading gif
         $(".stories-grid").append("<img class='loader' src='assets/images/ajax-loader.gif'>");
 
